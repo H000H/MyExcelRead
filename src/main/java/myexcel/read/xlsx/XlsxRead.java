@@ -31,7 +31,7 @@ public class XlsxRead {
      * 默认解析本工程的这个文件
      */
     public XlsxRead() {
-        FilePath = "白名单模板(1).xlsx";
+        FilePath = "src\\main\\resources\\白名单模板(1).xlsx";
         keyList = new String[]{"uname", "idcard", "mobile", "creditMoney", "level"};
         this.addFile();
     }
