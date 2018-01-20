@@ -6,13 +6,17 @@ import java.util.List;
 import java.util.Map;
 
 public class TestExample {
-    public static void maintest(){
+    @SuppressWarnings("deprecation")
+	public static void maintest(){
         //使用默认的excel文件
-        System.out.println("这是一个用例");
+        System.out.println("这是一个用例");maintest();
+        //新建一个读取流
         XlsxRead readExcle=new XlsxRead();
+        //设置返回是的约定key
         String[] keylist=readExcle.getKeyList();
         System.out.println("这个是key的值："+keylist.toString());
         StringBuilder builder=new StringBuilder("结果是：");
+        //获取第一个工作簿的所有值
         List<Map<String, Object>> list=readExcle.getValue(0);
         for(Map<String,Object> map : list){
             builder.append("/n"+"第n行数据是："+map.get(keylist[0])+" "+map.get(keylist[1])+" "+map.get(keylist[2])+" "+map.get(keylist[3])+" "+map.get(keylist[4]));
@@ -34,6 +38,9 @@ public class TestExample {
         }
         //这里是对double数据转换成string格式数据的处理
         System.out.println(map.toString());
-        System.out.println(new BigDecimal((double)map.get(keylist[2])).toString());
+        //这里是1.7的处理方式
+        //System.out.println(new BigDecimal((double)map.get(keylist[2])).toString());
+        //这里是1.8的处理方式
+        System.out.println(map.get(keylist[2]).toString());
     }
 }
