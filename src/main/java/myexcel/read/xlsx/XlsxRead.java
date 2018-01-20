@@ -61,10 +61,11 @@ public class XlsxRead {
 
     /**
      * 获取文件中的所有数据
+     * @param workbookNo 工作簿的页码
      * @return
      */
     public List<Map<String, Object>> getValue(int workbookNo) {
-        List<Map<String, Object>> result = new ArrayList<>();
+        List<Map<String, Object>> result = new ArrayList<Map<String, Object>>();
         InputStream inputStream=null;
         try {
             //获取文件输入流
@@ -105,7 +106,7 @@ public class XlsxRead {
     private Map<String, Object> getRowCellValue(XSSFSheet sheet, int rowNumber) {
         //获取当前工作簿德一行
         XSSFRow row = sheet.getRow(rowNumber);
-        Map<String, Object> result = new HashMap<>();
+        Map<String, Object> result = new HashMap<String, Object>();
         //
         XSSFCell cell;
         String key;
@@ -155,7 +156,7 @@ public class XlsxRead {
      * 向外提供的函数接口
      */
     public Map<String, Object> getRowValue(int workbookNo,int rowNumber) {
-        Map<String, Object> result = new HashMap<>();
+        Map<String, Object> result = new HashMap<String, Object>();
         InputStream inputStream=null;
         try {
             //获取文件输入流
