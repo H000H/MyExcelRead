@@ -1,4 +1,4 @@
-package myexcel.read.checkout;
+package myexcel.checkout;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
